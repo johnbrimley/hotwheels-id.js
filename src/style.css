@@ -1,0 +1,55 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* 👈 important */
+
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 0; /* 👈 also important */
+}
+
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #ddd;
+  background: #222;
+}
+
+/* Select stays natural height */
+#videoSource {
+  flex: 0 0 auto;
+}
+
+/* Canvas takes ALL remaining space */
+#outputCanvas {
+  flex: 1 1 0;   /* 👈 important */
+  min-height: 0; /* 👈 critical in flex layouts */
+  width: 100%;
+  background: black;
+}
+
+
+/* Results stay visible at bottom */
+#results {
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+/* Optional table polish */
+#resultTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#resultTable th,
+#resultTable td {
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  text-align: center;
+  font-size: 1.5vw;
+}
