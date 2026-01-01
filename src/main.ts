@@ -55,7 +55,7 @@ select.addEventListener('change', startSelectedDevice);
 /* -------------------- Data -------------------- */
 
 async function loadHotWheelsData(): Promise<void> {
-  const res = await fetch('/hotwheels.json');
+  const res = await fetch(`${import.meta.env.BASE_URL}hotwheels.json`)
   if (!res.ok) throw new Error('Failed to load hotwheels.json');
   hotwheelsData = await res.json();
 }
